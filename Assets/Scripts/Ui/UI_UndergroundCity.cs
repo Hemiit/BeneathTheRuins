@@ -25,6 +25,8 @@ public class UI_UndergroundCity : MonoBehaviour
     public Button btn_Maps;
     public Button btn_Collections;
     public Button btn_Mission;
+    public Button btn_NPC;
+
 
     //布局与间距
     public float spacing = 20f;
@@ -34,26 +36,43 @@ public class UI_UndergroundCity : MonoBehaviour
     public void Init()
     {
         Hide();
+        HideDialogue();
+
+        btn_NPC.onClick.AddListener(() => 
+        {
+            UIMgr.I.ui_UndergroundCity.ShowDialogue();
+        });
+         
     }
 
     public void Show() { gameObject.SetActive(true); }
     public void Hide() { gameObject.SetActive(false); }
 
+    public void ShowDialogue() 
+    {
+        ui_Dialogue.gameObject.SetActive(true);
+    }
+    public void HideDialogue() 
+    {
+        ui_Dialogue.gameObject.SetActive(false);
+    }
+
+
     void Start()
     {
         //初始：只显示对话面板（NPC点击触发）
-        SetActive(ui_Dialogue, true);
-        SetActive(ui_MissionBoard1, false);
-        SetActive(ui_MissionBoard2, false);
-        SetActive(ui_PreparationBoard, false);
+        //SetActive(ui_Dialogue, true);
+        //SetActive(ui_MissionBoard1, false);
+        //SetActive(ui_MissionBoard2, false);
+        //SetActive(ui_PreparationBoard, false);
 
         //对话面板：选任务版进入任务版1
-        if (btn_MissionBoard) btn_MissionBoard.onClick.AddListener(() =>
-            ShowMissionBoard1FromDialog());
+        //if (btn_MissionBoard) btn_MissionBoard.onClick.AddListener(() =>
+        //    ShowMissionBoard1FromDialog());
         
-        if (btn_Mission1) btn_Mission1.onClick.AddListener(ShowMissionBoard2ToRightOf1);
+        //if (btn_Mission1) btn_Mission1.onClick.AddListener(ShowMissionBoard2ToRightOf1);
 
-        if (btn_Accept) btn_Accept.onClick.AddListener(ShowPreparationBoardToRightOf2);
+        //if (btn_Accept) btn_Accept.onClick.AddListener(ShowPreparationBoardToRightOf2);
 
     }
 

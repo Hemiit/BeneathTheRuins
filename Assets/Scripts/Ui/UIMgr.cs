@@ -19,6 +19,7 @@ public class UIMgr : MonoBehaviour
     public UI_SpecialMission ui_SpecialMission;
     public UI_UndergroundCity ui_UndergroundCity;
 
+
     void Awake()
     {
         I = this;
@@ -27,6 +28,8 @@ public class UIMgr : MonoBehaviour
         ui_Ai.Init();
         ui_GuidanceAi.Init();
         ui_GuidanceAi2.Init();
+        ui_ToolPanel.Init();
+        ui_UndergroundCity.Init();
 
     }
 

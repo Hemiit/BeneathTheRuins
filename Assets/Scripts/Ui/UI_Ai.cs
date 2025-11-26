@@ -15,12 +15,33 @@ public class UI_Ai : MonoBehaviour
     public UI_GuidanceAi2 ui_GuidanceAi2;
     public UI_ToolPanel ui_ToolPanel;
 
+    public bool isAiToolPnlShown;
+
   
     public void Init()
     {
         Hide();
-    
-        
+
+        btn_AiProfile.onClick.AddListener(()=>
+        {
+            if (isAiToolPnlShown) 
+            {
+                UIMgr.I.ui_ToolPanel.Hide();
+                isAiToolPnlShown = false;
+            }
+            else
+            {
+                UIMgr.I.ui_ToolPanel.Show();
+                isAiToolPnlShown = true;
+            }
+             
+            
+
+
+        });
+
+
+
     }
 
     public void Show() { gameObject.SetActive(true); }
@@ -34,14 +55,14 @@ public class UI_Ai : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // 给按钮添加点击事件
-        btn_AiProfile.onClick.AddListener(AiProfile);
-        btn_AiProfileBlue.onClick.AddListener(AiProfileBlue);
-        btn_AiProfileRed.onClick.AddListener(AiProfileRed);
-        // 确保一开始面板是隐藏的
-        ui_ToolPanel.gameObject.SetActive(false);
-        ui_GuidanceAi.gameObject.SetActive(false);
-        ui_GuidanceAi2.gameObject.SetActive(false);
+        //// 给按钮添加点击事件
+        //btn_AiProfile.onClick.AddListener(AiProfile);
+        //btn_AiProfileBlue.onClick.AddListener(AiProfileBlue);
+        //btn_AiProfileRed.onClick.AddListener(AiProfileRed);
+        //// 确保一开始面板是隐藏的
+        //ui_ToolPanel.gameObject.SetActive(false);
+        //ui_GuidanceAi.gameObject.SetActive(false);
+        //ui_GuidanceAi2.gameObject.SetActive(false);
     }
 
     void AiProfile()

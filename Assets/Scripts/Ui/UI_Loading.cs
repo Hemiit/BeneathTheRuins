@@ -20,7 +20,8 @@ public class UI_Loading : MonoBehaviour
             Hide();
             //Go to Combate Scene.===TODO
 
-            //UIMgr.I.Ui
+            UIMgr.I.ui_Ai.Show();
+            UIMgr.I.ui_UndergroundCity.Show();
     
 
 

@@ -11,10 +11,20 @@ public class UI_ToolPanel : MonoBehaviour
     public void Init() 
     {
         Hide();
+
+
+
+
     }
 
-    public void Show() { gameObject.SetActive(true); }
-    public void Hide() { gameObject.SetActive(false); }
+    public void Show() 
+    { 
+        gameObject.SetActive(true); 
+    }
+    public void Hide() 
+    { 
+        gameObject.SetActive(false); 
+    }
     private void Awake()
     {
 
